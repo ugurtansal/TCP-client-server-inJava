@@ -9,19 +9,19 @@ public class TCPServer {
             System.out.println("TCP Server is running on port " + port);
 
             while (true) {
-                Socket connectionSocket = serverSocket.accept(); 
+                Socket connectionSocket = serverSocket.accept();
                 System.out.println("Client connected: " + connectionSocket.getInetAddress());
 
                 BufferedReader inFromClient = new BufferedReader(new InputStreamReader(connectionSocket.getInputStream()));
                 DataOutputStream outToClient = new DataOutputStream(connectionSocket.getOutputStream());
 
-                String clientSentence = inFromClient.readLine(); // İstemciden mesaj al
+                String clientSentence = inFromClient.readLine();
                 System.out.println("Received: " + clientSentence);
 
-                String modifiedSentence = clientSentence.toUpperCase() + "\n"; 
-                outToClient.writeBytes(modifiedSentence); //Returne client message but with uppercase
+                String modifiedSentence = clientSentence.toUpperCase() + "\n";
+                outToClient.writeBytes(modifiedSentence); //Return client message but with uppercase
 
-                connectionSocket.close(); 
+                connectionSocket.close();
             }
         } catch (IOException e) {
             e.printStackTrace();

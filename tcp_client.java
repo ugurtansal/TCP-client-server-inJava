@@ -5,7 +5,7 @@ public class TCPClient {
     public static void main(String[] args) {
         String sentence;
         String modifiedSentence;
-        String serverIP = "YOUR_API_ADDRESS"; // Server IP address,
+        String serverIP = "YOUR_IP_ADDRESS"; // Server IP address,
         int serverPort = 5000; // Server port , it can be change
 
         try (BufferedReader inFromUser = new BufferedReader(new InputStreamReader(System.in));
